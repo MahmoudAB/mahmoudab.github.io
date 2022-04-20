@@ -1,5 +1,5 @@
 ---
-title: 'Building RESTful APIs with Node\.js and Express'
+title: 'Building RESTful APIs with Node.js and Express'
 date: '2022-04-20'
 tags: ['nodejs', 'APIs', 'rest', 'express']
 draft: true
@@ -16,32 +16,30 @@ summary: 'lets build a simple backend app from scratch!'
 
 1. Open a terminal and navigate to a dir of your choice
 1. Create a new dir for the project
-> 
-
+    ```
     mkdir inventory-chest
+    ```
 
 1. Run the follwing command 
-> 
-
+    ```
     npm init
-
-   - Follow the prompts
-        - Enter your name and description
-        - You can leave the rest as default for now 
-        - Voila you should be all set to start coding and adding dependencies 
+    ```
+   - Follow the prompts:
+     - Enter your name and description
+     - You can leave the rest as default for now 
+     - Voila you should be all set to start coding and adding dependencies 
     
 ## **Step 4**: Lets add all the dependencies we need
 
  1. navigate to the project directory and run the following command to install the packages we need:
-    > 
-
-         npm i express body-parser express mongo mongoose nodemon
-
+    ```
+    npm i express body-parser express mongo mongoose nodemon
+    ```
 
 2. Now we will add specific dependencies only for dev puposes, is is doone by adding  __--save-dev__ 
-    >
-
-         npm i --save-dev babel-cli -babel-preset-env babel-preset-stage0
+   ```
+   npm i --save-dev babel-cli -babel-preset-env babel-preset-stage0
+   ```
 
 3. Now lets change our startup script in the package.json file
 
@@ -87,12 +85,24 @@ summary: 'lets build a simple backend app from scratch!'
     ```
 ## **Step 6**: Lets test run our application!
 1. To run the project, navigate to the main project dir and run the following command:
-      
-  
-        npm start
+    ```
+    npm start
+    ```
 2. You can use your browser and navigate to http://localhost:4000
-3. Or you can downlaod and test your application using [post man](https://www.postman.com/downloads/) 
+3. Or you can downlaod and test your application using [Postman](https://www.postman.com/downloads/) 
 
     You should see our message: **Hello, welcome to your chest!**
 
 ## **Step 7**: Now lets add routes 
+
+1. Before we do that, lets give a structure to our project:
+    
+    - In the main project dir, let add a new **src** dir
+
+      ```
+       mkdir src
+      ```
+    - inside src dir we will add 3 more dirs (controllers, models, routes)
+      ```
+      mkdir {controllers,models,routes}
+      ```
