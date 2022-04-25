@@ -2,7 +2,7 @@
 title: 'Building RESTful APIs with Node.js and Express'
 date: '2022-04-20'
 tags: ['nodejs', 'APIs', 'rest', 'express']
-draft: true
+draft: false
 summary: 'lets build a simple backend app from scratch!'
 ---
 
@@ -106,3 +106,65 @@ summary: 'lets build a simple backend app from scratch!'
       ```
       mkdir {controllers,models,routes}
       ```
+2. Add a new file and call it inventoryChestRoutes.js under the routes dir
+3. we can code our different routes
+    1. start off by creating a const that will take in app and set paths as follows:
+     ```
+    const routes = (app) => {}
+
+     ```
+    2. lets start by defining our first path `/chest` inside the above mentions `{}`.
+        Inside our path definition we will also add two methods (GET and POST) and we will handle both:
+     ```
+    app.route("/chest")
+        .get((req, res) =>
+            res.send("GET request successfull"))
+        .post((req, res) => 
+            res.send("POST request successfull"))
+     ```
+    3. And now a second path that includes an id `/chest/:chestID`
+        and like our previous path we will add two different methods(PUT and DELETE) and handle the incoming request:
+     ```
+     app.route("/chest/:chestID")
+        .put((req, res) => 
+            res.send("PUT request successfull"))
+        .delete((req, res) => 
+            res.send("DELETE request successfull"))
+     ```
+    4. Finally al that is left to do is to export our routes as follows:
+     ```
+    export default routes
+
+     ```
+    5. your inventoryChestRoutes.js should be looking like this:
+     
+        ```
+        const routes = (app) => {
+        app.route("/chest")
+            .get((req, res) =>
+                res.send("GET request successfull"))
+            .post((req, res) => 
+                res.send("POST request successfull"))
+        app.route("/chest/:chestID")
+            .put((req, res) => 
+                res.send("PUT request successfull"))
+            .delete((req, res) => 
+                res.send("DELETE request successfull"))
+        } 
+
+        export default routes
+
+        ```
+    6. Now open postman and test all the new paths we just added!
+
+## **Step 7**: Now its time to store something in our chest
+
+1. We will start off by defining what is an __item__ we can put in the chest. Since we are using Mongo as our database, we will need to set up our **mongo** connection: 
+
+    0. Make sure that your local mongodb is up and running
+    1. Navigate to the main project directory and open the index.js file
+    2. Start by importing body-parser (what is used to parse the data incoming from mongo to our API) and mongoose
+        ```
+        
+        ```
+
