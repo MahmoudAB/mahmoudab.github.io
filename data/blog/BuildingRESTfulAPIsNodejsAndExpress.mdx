@@ -163,8 +163,24 @@ summary: 'lets build a simple backend app from scratch!'
 
     0. Make sure that your local mongodb is up and running
     1. Navigate to the main project directory and open the index.js file
-    2. Start by importing body-parser (what is used to parse the data incoming from mongo to our API) and mongoose
+    2. Start by importing mongoose and body-parser (what is used to parse the data incoming from mongo to our API)
         ```
-        
+        import mongoose from 'mongoose'
+        import bodyParser from 'body-parser'
+
         ```
 
+    3. Set up your connection to your local mongo
+        ```
+        mongoose.Promise = global.Promise 
+        mongoose.connect('mongodb://localhost/Chestdb',{
+            useNewUrlParser: true,
+            useUnifiedTopology: true
+        });
+        ```
+    4. Set up the bodyParser
+        ```
+        // bodyparser setup
+        app.use(bodyParser.urlencoded({ extended: true }));
+        app.use(bodyParser.json())
+        ```
