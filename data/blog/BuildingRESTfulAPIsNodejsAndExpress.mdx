@@ -159,7 +159,7 @@ summary: 'lets build a simple backend app from scratch!'
 
 ## **Step 7**: Now its time to store something in our chest
 
-1. We will start off by defining what is an __item__ we can put in the chest. Since we are using Mongo as our database, we will need to set up our **mongo** connection: 
+1. We will start off by defining what is an __item__ we can put in our chest. Since we are using Mongo as our database, we will need to set up our **mongo** connection: 
 
     0. Make sure that your local mongodb is up and running
     1. Navigate to the main project directory and open the index.js file
@@ -183,4 +183,16 @@ summary: 'lets build a simple backend app from scratch!'
         // bodyparser setup
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(bodyParser.json())
+        ```
+    5. Now under the /src/controllers folder create na new file and call it inventoryModel.js, add add the followinf code that defines the schema of what will be storing
+
+        ```
+        import mongoose from "mongoose";
+
+        const Schema = mongoose.Schema
+
+        export const ChestInventorySchema = new Schema ({
+            name: String,
+            created_date: { type: Date, default: Date.now }
+        });
         ```
