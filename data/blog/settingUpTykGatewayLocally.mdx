@@ -1,0 +1,79 @@
+---
+title: 'Setting up Tyk gateway and dev portal locally'
+date: '2022-05-23'
+tags: ['tyk', 'gateway', 'api']
+draft: false
+summary: 'Test your api's using the Tyk api gateway!!'
+---
+
+## What is the Tyk gatway? 
+
+Tyk is an opensource API management gatway. Meaning Tyk is used to configure/expose your API's to the world.
+
+# Lets set up a local tyk getway
+
+### Step 1: We need a liscense!
+
+For that you must go on the (Tyk website)[tyk.io] and sign up
+
+### Step 2: Lets clone the tyk docker project
+
+clone : https://github.com/TykTechnologies/tyk-docker-simple-node-api
+
+### Step 3: lets setup our tyk gatware: navigate to the root directory of the freshly cloned project and run the following command:
+
+```
+
+bash scripts/init.sh
+
+```
+
+**enter the key when prompted**
+
+### Step 3: Running the Docker 
+
+1. Navugate to the Tyk directory.
+
+ ```
+ cd tyk
+
+ ```
+
+2. Rune docker compose
+
+ ```
+
+ docker-compose -f docker-compose.yml -f docker-local.yml up
+
+ ```
+
+3. Now go on a web browser and go to http://localhost:3000/ to configure your gateway 
+
+
+# Now lets set up the dev portal 
+
+1. You will need to clone the following script: https://github.com/sedkis/tyk/blob/master/portal/bootstrap/bootstrap_portal.sh
+
+2. Now you need open the file and change the following fields to match you gateway settings
+ 
+ ```
+########### Variables
+dashboard_base_url="http://localhost:3000/"
+dashboard_user_api_credentials="myuserapikey"
+organisation_id="myorgid"
+############ Fill these in
+
+ ```
+
+3. Naigate to script location and add executable permissions tot he script by running the following command:
+
+ ```
+sudo chmod +x bootstrap_portal.sh
+ ```
+
+ afterwards run the script:
+
+  ```
+  ./bootstrap_portal.sh
+  ```
+
