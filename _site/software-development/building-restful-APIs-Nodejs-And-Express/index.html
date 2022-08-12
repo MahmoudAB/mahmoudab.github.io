@@ -1,0 +1,699 @@
+<!doctype html>
+<!--
+  Minimal Mistakes Jekyll Theme 4.24.0 by Michael Rose
+  Copyright 2013-2020 Michael Rose - mademistakes.com | @mmistakes
+  Free for personal and commercial use under the MIT license
+  https://github.com/mmistakes/minimal-mistakes/blob/master/LICENSE
+-->
+<html lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+
+<!-- begin _includes/seo.html --><title>Building RESTful APIs with Node.js and Express - Mahmoud’s Blog</title>
+<meta name="description" content="To get started you must have some backgroud knowledge in javascript">
+
+
+  <meta name="author" content="Mahmoud Abdel Basset">
+  
+  <meta property="article:author" content="Mahmoud Abdel Basset">
+  
+
+
+<meta property="og:type" content="article">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Mahmoud's Blog">
+<meta property="og:title" content="Building RESTful APIs with Node.js and Express">
+<meta property="og:url" content="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">
+
+
+  <meta property="og:description" content="To get started you must have some backgroud knowledge in javascript">
+
+
+
+
+
+
+
+  <meta property="article:published_time" content="2022-04-20T00:00:00-04:00">
+
+
+
+
+
+
+<link rel="canonical" href="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">
+
+
+
+
+<script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    
+      "@type": "Person",
+      "name": "Mahmoud Abdel Basset",
+      "url": "http://localhost:4000/blog/"
+    
+  }
+</script>
+
+
+
+
+
+
+
+<!-- end _includes/seo.html -->
+
+
+
+  <link href="/blog/feed.xml" type="application/atom+xml" rel="alternate" title="Mahmoud's Blog Feed">
+
+
+<!-- https://t.co/dKP3o1e -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+  document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/g, '') + ' js ';
+</script>
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="/blog/assets/css/main.css">
+<link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css"></noscript>
+
+
+
+    <!-- start custom head snippets -->
+
+<!-- insert favicons. use https://realfavicongenerator.net/ -->
+
+<!-- end custom head snippets -->
+
+  </head>
+
+  <body class="layout--single">
+    <nav class="skip-links">
+  <ul>
+    <li><a href="#site-nav" class="screen-reader-shortcut">Skip to primary navigation</a></li>
+    <li><a href="#main" class="screen-reader-shortcut">Skip to content</a></li>
+    <li><a href="#footer" class="screen-reader-shortcut">Skip to footer</a></li>
+  </ul>
+</nav>
+
+    <!--[if lt IE 9]>
+<div class="notice--danger align-center" style="margin: 0;">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience.</div>
+<![endif]-->
+
+    
+
+<div class="masthead">
+  <div class="masthead__inner-wrap">
+    <div class="masthead__menu">
+      <nav id="site-nav" class="greedy-nav">
+        
+        <a class="site-title" href="/blog/">
+          Mahmoud's Blog
+          
+        </a>
+        <ul class="visible-links"></ul>
+        
+        <button class="search__toggle" type="button">
+          <span class="visually-hidden">Toggle search</span>
+          <i class="fas fa-search"></i>
+        </button>
+        
+        <button class="greedy-nav__toggle hidden" type="button">
+          <span class="visually-hidden">Toggle menu</span>
+          <div class="navicon"></div>
+        </button>
+        <ul class="hidden-links hidden"></ul>
+      </nav>
+    </div>
+  </div>
+</div>
+
+
+    <div class="initial-content">
+      
+
+
+
+<div id="main" role="main">
+  
+  <div class="sidebar sticky">
+  
+
+
+<div itemscope itemtype="https://schema.org/Person">
+
+  
+    <div class="author__avatar">
+      
+        <img src="/blog/assets/images/me.png" alt="Mahmoud Abdel Basset" itemprop="image">
+      
+    </div>
+  
+
+  <div class="author__content">
+    
+      <h3 class="author__name" itemprop="name">Mahmoud Abdel Basset</h3>
+    
+    
+      <div class="author__bio" itemprop="description">
+        <p>Welcome to my blog where I will be writing articles on various topics such as software developement, technology, videography, photography, and self development.</p>
+
+      </div>
+    
+  </div>
+
+  <div class="author__urls-wrapper">
+    <button class="btn btn--inverse">Follow</button>
+    <ul class="author__urls social-icons">
+      
+        <li itemprop="homeLocation" itemscope itemtype="https://schema.org/Place">
+          <i class="fas fa-fw fa-map-marker-alt" aria-hidden="true"></i> <span itemprop="name">Montreal, Canada</span>
+        </li>
+      
+
+      
+        
+          
+            <li><a href="mailto:mahmoud.ab.dev@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i><span class="label">Email</span></a></li>
+          
+        
+          
+            <li><a href="https://github.com/MahmoudAB" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i><span class="label">GitHub</span></a></li>
+          
+        
+          
+            <li><a href="https://www.instagram.com/mah.moud.ab/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i><span class="label">Instagram</span></a></li>
+          
+        
+          
+            <li><a href="https://www.youtube.com/channel/UCHsL5dE4-Pvhs3BQWmFD6nA" rel="nofollow noopener noreferrer"><i class="fab fa-brands fa-youtube" aria-hidden="true"></i><span class="label">Youtube</span></a></li>
+          
+        
+          
+            <li><a href="https://www.linkedin.com/in/mahmoud-abdel-basset-6a492588/" rel="nofollow noopener noreferrer"><i class="fab fa-brands fa-linkedin" aria-hidden="true"></i><span class="label">Linkedin</span></a></li>
+          
+        
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      
+
+      <!--
+  <li>
+    <a href="http://link-to-whatever-social-network.com/user/" itemprop="sameAs" rel="nofollow noopener noreferrer">
+      <i class="fas fa-fw" aria-hidden="true"></i> Custom Social Profile Link
+    </a>
+  </li>
+-->
+    </ul>
+  </div>
+</div>
+
+  
+  </div>
+
+
+
+  <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
+    <meta itemprop="headline" content="Building RESTful APIs with Node.js and Express">
+    <meta itemprop="description" content="To get started you must have some backgroud knowledge in javascript">
+    <meta itemprop="datePublished" content="2022-04-20T00:00:00-04:00">
+    
+
+    <div class="page__inner-wrap">
+      
+        <header>
+          <h1 id="page-title" class="page__title" itemprop="headline">Building RESTful APIs with Node.js and Express
+</h1>
+          
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          3 minute read
+        
+      </span>
+    
+  </p>
+
+
+        </header>
+      
+
+      <section class="page__content" itemprop="text">
+        
+        <h4 id="to-get-started-you-must-have-some-backgroud-knowledge-in-javascript">To get started you must have some backgroud knowledge in javascript</h4>
+
+<h2 id="step-1-install-nodejs"><strong>Step 1</strong>: <a href="https://nodejs.org/en/download/">Install nodejs</a></h2>
+
+<h2 id="step-2-we-will-be-using-mongo-make-sure-you-have-that-installed"><strong>Step 2</strong>: <a href="https://www.mongodb.com/docs/manual/installation/">We will be using mongo, make sure you have that installed</a></h2>
+
+<h2 id="step-3-lets-get-started-with-setting-up-your-node-project"><strong>Step 3</strong>: Lets get started with setting up your node project</h2>
+
+<ol>
+  <li>Open a terminal and navigate to a dir of your choice</li>
+  <li>Create a new dir for the project
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir inventory-chest
+</code></pre></div>    </div>
+  </li>
+  <li>Run the follwing command
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm init
+</code></pre></div>    </div>
+    <ul>
+      <li>Follow the prompts:
+        <ul>
+          <li>Enter your name and description</li>
+          <li>You can leave the rest as default for now</li>
+          <li>Voila you should be all set to start coding and adding dependencies</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="step-4-lets-add-all-the-dependencies-we-need"><strong>Step 4</strong>: Lets add all the dependencies we need</h2>
+
+<ol>
+  <li>navigate to the project directory and run the following command to install the packages we need:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i express body-parser express mongo mongoose nodemon
+</code></pre></div>    </div>
+  </li>
+  <li>Now we will add specific dependencies only for dev puposes, is is doone by adding  <strong>–save-dev</strong>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save-dev babel-cli -babel-preset-env babel-preset-stage0
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Now lets change our startup script in the package.json file</p>
+
+    <ul>
+      <li>in your file you will see:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "scripts": {
+  "test": "echo \"Error: no test specified\" &amp;&amp; exit 1"
+ },
+</code></pre></div>        </div>
+      </li>
+      <li>change it to :
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> "scripts": {
+  "start": "nodemon ./index.js --exec babel-node -e js"
+ }
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="step-5-now-lets-start-coding"><strong>Step 5</strong>: Now lets start coding!</h2>
+
+<ol>
+  <li>
+    <p>create new <strong>index.js</strong> file</p>
+  </li>
+  <li>
+    <p>In the index.js file we will start by importing express</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import express from 'express';
+</code></pre></div>    </div>
+  </li>
+  <li>We then declare two const
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> const app = express();
+ const PORT = 4000;
+</code></pre></div>    </div>
+  </li>
+  <li>lets add a get enpoind
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.get('/', (req, res) =&gt;
+     res.send('Hello, welcome to your chest!')
+ );
+</code></pre></div>    </div>
+  </li>
+  <li>Now lets start our sever and log that we are listening on port 4000:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.listen(PORT, () =&gt; 
+     console.log(`Your server is sunning on port ${PORT}`)
+ );
+</code></pre></div>    </div>
+    <h2 id="step-6-lets-test-run-our-application"><strong>Step 6</strong>: Lets test run our application!</h2>
+  </li>
+  <li>To run the project, navigate to the main project dir and run the following command:
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm start
+</code></pre></div>    </div>
+  </li>
+  <li>You can use your browser and navigate to http://localhost:4000</li>
+  <li>
+    <p>Or you can downlaod and test your application using <a href="https://www.postman.com/downloads/">Postman</a></p>
+
+    <p>You should see our message: <strong>Hello, welcome to your chest!</strong></p>
+  </li>
+</ol>
+
+<h2 id="step-7-now-lets-add-routes"><strong>Step 7</strong>: Now lets add routes</h2>
+
+<ol>
+  <li>
+    <p>Before we do that, lets give a structure to our project:</p>
+
+    <ul>
+      <li>
+        <p>In the main project dir, let add a new <strong>src</strong> dir</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir src
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>inside src dir we will add 3 more dirs (controllers, models, routes)</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir {controllers,models,routes}
+</code></pre></div>        </div>
+      </li>
+    </ul>
+  </li>
+  <li>Add a new file and call it inventoryChestRoutes.js under the routes dir</li>
+  <li>we can code our different routes
+    <ol>
+      <li>start off by creating a const that will take in app and set paths as follows:
+  ```
+ const routes = (app) =&gt; {}</li>
+    </ol>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 2. lets start by defining our first path `/chest` inside the above mentions `{}`.
+     Inside our path definition we will also add two methods (GET and POST) and we will handle both:
+</code></pre></div>    </div>
+    <p>app.route(“/chest”)
+     .get((req, res) =&gt;
+         res.send(“GET request successfull”))
+     .post((req, res) =&gt; 
+         res.send(“POST request successfull”))</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 3. And now a second path that includes an id `/chest/:chestID`
+     and like our previous path we will add two different methods(PUT and DELETE) and handle the incoming request:
+</code></pre></div>    </div>
+    <p>app.route(“/chest/:chestID”)
+     .put((req, res) =&gt; 
+         res.send(“PUT request successfull”))
+     .delete((req, res) =&gt; 
+         res.send(“DELETE request successfull”))</p>
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 4. Finally al that is left to do is to export our routes as follows:
+</code></pre></div>    </div>
+    <p>export default routes</p>
+
+    <p>```</p>
+    <ol>
+      <li>
+        <p>your inventoryChestRoutes.js should be looking like this:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> const routes = (app) =&gt; {
+ app.route("/chest")
+     .get((req, res) =&gt;
+         res.send("GET request successfull"))
+     .post((req, res) =&gt; 
+         res.send("POST request successfull"))
+ app.route("/chest/:chestID")
+     .put((req, res) =&gt; 
+         res.send("PUT request successfull"))
+     .delete((req, res) =&gt; 
+         res.send("DELETE request successfull"))
+ } 
+
+ export default routes
+
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Now open postman and test all the new paths we just added!</p>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<h2 id="step-7-now-its-time-to-store-something-in-our-chest"><strong>Step 7</strong>: Now its time to store something in our chest</h2>
+
+<ol>
+  <li>
+    <p>We will start off by defining what is an <strong>item</strong> we can put in our chest. Since we are using Mongo as our database, we will need to set up our <strong>mongo</strong> connection:</p>
+
+    <ol>
+      <li>Make sure that your local mongodb is up and running</li>
+      <li>Navigate to the main project directory and open the index.js file</li>
+      <li>Start by importing mongoose and body-parser (what is used to parse the data incoming from mongo to our API)
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import mongoose from 'mongoose'
+ import bodyParser from 'body-parser'
+
+</code></pre></div>        </div>
+      </li>
+      <li>Set up your connection to your local mongo
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mongoose.Promise = global.Promise 
+ mongoose.connect('mongodb://localhost/Chestdb',{
+     useNewUrlParser: true,
+     useUnifiedTopology: true
+ });
+</code></pre></div>        </div>
+      </li>
+      <li>Set up the bodyParser
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> // bodyparser setup
+ app.use(bodyParser.urlencoded({ extended: true }));
+ app.use(bodyParser.json())
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Now under the /src/controllers folder create na new file and call it inventoryModel.js, add add the followinf code that defines the schema of what will be storing</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import mongoose from "mongoose";
+
+ const Schema = mongoose.Schema
+
+ export const ChestInventorySchema = new Schema ({
+     name: String,
+     created_date: { type: Date, default: Date.now }
+ });
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+        
+      </section>
+
+      <footer class="page__meta">
+        
+        
+
+
+        
+
+  <p class="page__date"><strong><i class="fas fa-fw fa-calendar-alt" aria-hidden="true"></i> Updated:</strong> <time datetime="2022-04-20T00:00:00-04:00">April 20, 2022</time></p>
+
+
+      </footer>
+
+      <section class="page__share">
+  
+
+  <a href="https://twitter.com/intent/tweet?text=Building+RESTful+APIs+with+Node.js+and+Express%20http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fsoftware-development%2Fbuilding-restful-APIs-Nodejs-And-Express%2F" class="btn btn--twitter" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Twitter"><i class="fab fa-fw fa-twitter" aria-hidden="true"></i><span> Twitter</span></a>
+
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fsoftware-development%2Fbuilding-restful-APIs-Nodejs-And-Express%2F" class="btn btn--facebook" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on Facebook"><i class="fab fa-fw fa-facebook" aria-hidden="true"></i><span> Facebook</span></a>
+
+  <a href="https://www.linkedin.com/shareArticle?mini=true&url=http%3A%2F%2Flocalhost%3A4000%2Fblog%2Fsoftware-development%2Fbuilding-restful-APIs-Nodejs-And-Express%2F" class="btn btn--linkedin" onclick="window.open(this.href, 'window', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;" title="Share on LinkedIn"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i><span> LinkedIn</span></a>
+</section>
+
+
+      
+  <nav class="pagination">
+    
+      <a href="#" class="pagination--pager disabled">Previous</a>
+    
+    
+      <a href="/blog/hello/hello-world/" class="pagination--pager" title="Hello World
+">Next</a>
+    
+  </nav>
+
+    </div>
+
+    
+  </article>
+
+  
+  
+    <div class="page__related">
+      <h4 class="page__related-title">You May Also Enjoy</h4>
+      <div class="grid__wrapper">
+        
+          
+
+
+
+<div class="grid__item">
+  <article class="archive__item" itemscope itemtype="https://schema.org/CreativeWork">
+    
+    <h2 class="archive__item-title no_toc" itemprop="headline">
+      
+        <a href="/blog/hello/hello-world/" rel="permalink">Hello World
+</a>
+      
+    </h2>
+    
+
+  <p class="page__meta">
+    
+
+    
+
+    
+      
+      
+
+      <span class="page__meta-readtime">
+        <i class="far fa-clock" aria-hidden="true"></i>
+        
+          less than 1 minute read
+        
+      </span>
+    
+  </p>
+
+
+    <p class="archive__item-excerpt" itemprop="description">Hello World
+</p>
+  </article>
+</div>
+
+        
+      </div>
+    </div>
+  
+  
+</div>
+
+    </div>
+
+    
+      <div class="search-content">
+        <div class="search-content__inner-wrap"><form class="search-content__form" onkeydown="return event.key != 'Enter';">
+    <label class="sr-only" for="search">
+      Enter your search term...
+    </label>
+    <input type="search" id="search" class="search-input" tabindex="-1" placeholder="Enter your search term..." />
+  </form>
+  <div id="results" class="results"></div></div>
+
+      </div>
+    
+
+    <div id="footer" class="page__footer">
+      <footer>
+        <!-- start custom footer snippets -->
+
+<!-- end custom footer snippets -->
+        <div class="page__footer-follow">
+  <ul class="social-icons">
+    
+
+    
+      
+        
+          <li><a href="mailto:mahmoud.ab.dev@gmail.com" rel="nofollow noopener noreferrer"><i class="fas fa-fw fa-envelope-square" aria-hidden="true"></i> Email</a></li>
+        
+      
+        
+          <li><a href="https://github.com/MahmoudAB" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-github" aria-hidden="true"></i> GitHub</a></li>
+        
+      
+        
+          <li><a href="https://www.instagram.com/mah.moud.ab/" rel="nofollow noopener noreferrer"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        
+      
+        
+          <li><a href="https://www.youtube.com/channel/UCHsL5dE4-Pvhs3BQWmFD6nA" rel="nofollow noopener noreferrer"><i class="fab fa fa-youtube-play" aria-hidden="true"></i> Youtube</a></li>
+        
+      
+        
+          <li><a href="https://www.linkedin.com/in/mahmoud-abdel-basset-6a492588/" rel="nofollow noopener noreferrer"><i class="fab fa fa-linkedin-square" aria-hidden="true"></i> Linkedin</a></li>
+        
+      
+    
+
+    
+      <li><a href="/blog/feed.xml"><i class="fas fa-fw fa-rss-square" aria-hidden="true"></i> Feed</a></li>
+    
+  </ul>
+</div>
+
+<div class="page__footer-copyright">&copy; 2022 Mahmoud Abdel Basset. Powered by <a href="https://jekyllrb.com" rel="nofollow">Jekyll</a> &amp; <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a>.</div>
+
+      </footer>
+    </div>
+
+    
+  <script src="/blog/assets/js/main.min.js"></script>
+
+
+
+
+<script src="/blog/assets/js/lunr/lunr.min.js"></script>
+<script src="/blog/assets/js/lunr/lunr-store.js"></script>
+<script src="/blog/assets/js/lunr/lunr-en.js"></script>
+
+
+
+
+
+
+
+  </body>
+</html>

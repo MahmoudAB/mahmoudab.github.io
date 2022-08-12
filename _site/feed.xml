@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-08-12T07:59:00-04:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Mahmoud’s Blog</title><subtitle>Welcome to my blog where I will be writing articles on things I like.
+ - Which include:
+    - Software developement 
+    - technology
+    - videography 
+    - photography
+    - self development </subtitle><author><name>Mahmoud Abdel Basset</name></author><entry><title type="html">Hello World</title><link href="http://localhost:4000/blog/hello/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2022-08-12T00:00:00-04:00</published><updated>2022-08-12T00:00:00-04:00</updated><id>http://localhost:4000/blog/hello/hello-world</id><content type="html" xml:base="http://localhost:4000/blog/hello/hello-world/">&lt;p&gt;Hello World&lt;/p&gt;</content><author><name>Mahmoud Abdel Basset</name></author><category term="hello" /><category term="hello" /><category term="world" /><summary type="html">Hello World</summary></entry><entry><title type="html">Building RESTful APIs with Node.js and Express</title><link href="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/" rel="alternate" type="text/html" title="Building RESTful APIs with Node.js and Express" /><published>2022-04-20T00:00:00-04:00</published><updated>2022-04-20T00:00:00-04:00</updated><id>http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express</id><content type="html" xml:base="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">&lt;h4 id=&quot;to-get-started-you-must-have-some-backgroud-knowledge-in-javascript&quot;&gt;To get started you must have some backgroud knowledge in javascript&lt;/h4&gt;
+
+&lt;h2 id=&quot;step-1-install-nodejs&quot;&gt;&lt;strong&gt;Step 1&lt;/strong&gt;: &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;Install nodejs&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;step-2-we-will-be-using-mongo-make-sure-you-have-that-installed&quot;&gt;&lt;strong&gt;Step 2&lt;/strong&gt;: &lt;a href=&quot;https://www.mongodb.com/docs/manual/installation/&quot;&gt;We will be using mongo, make sure you have that installed&lt;/a&gt;&lt;/h2&gt;
+
+&lt;h2 id=&quot;step-3-lets-get-started-with-setting-up-your-node-project&quot;&gt;&lt;strong&gt;Step 3&lt;/strong&gt;: Lets get started with setting up your node project&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Open a terminal and navigate to a dir of your choice&lt;/li&gt;
+  &lt;li&gt;Create a new dir for the project
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mkdir inventory-chest
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Run the follwing command
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Follow the prompts:
+        &lt;ul&gt;
+          &lt;li&gt;Enter your name and description&lt;/li&gt;
+          &lt;li&gt;You can leave the rest as default for now&lt;/li&gt;
+          &lt;li&gt;Voila you should be all set to start coding and adding dependencies&lt;/li&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;step-4-lets-add-all-the-dependencies-we-need&quot;&gt;&lt;strong&gt;Step 4&lt;/strong&gt;: Lets add all the dependencies we need&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;navigate to the project directory and run the following command to install the packages we need:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm i express body-parser express mongo mongoose nodemon
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now we will add specific dependencies only for dev puposes, is is doone by adding  &lt;strong&gt;–save-dev&lt;/strong&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm i --save-dev babel-cli -babel-preset-env babel-preset-stage0
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Now lets change our startup script in the package.json file&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;in your file you will see:
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;scripts&quot;: {
+  &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;amp;&amp;amp; exit 1&quot;
+ },
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;change it to :
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; &quot;scripts&quot;: {
+  &quot;start&quot;: &quot;nodemon ./index.js --exec babel-node -e js&quot;
+ }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;step-5-now-lets-start-coding&quot;&gt;&lt;strong&gt;Step 5&lt;/strong&gt;: Now lets start coding!&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;create new &lt;strong&gt;index.js&lt;/strong&gt; file&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;In the index.js file we will start by importing express&lt;/p&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; import express from &apos;express&apos;;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;We then declare two const
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; const app = express();
+ const PORT = 4000;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;lets add a get enpoind
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; app.get(&apos;/&apos;, (req, res) =&amp;gt;
+     res.send(&apos;Hello, welcome to your chest!&apos;)
+ );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Now lets start our sever and log that we are listening on port 4000:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; app.listen(PORT, () =&amp;gt; 
+     console.log(`Your server is sunning on port ${PORT}`)
+ );
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;h2 id=&quot;step-6-lets-test-run-our-application&quot;&gt;&lt;strong&gt;Step 6&lt;/strong&gt;: Lets test run our application!&lt;/h2&gt;
+  &lt;/li&gt;
+  &lt;li&gt;To run the project, navigate to the main project dir and run the following command:
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; npm start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+  &lt;li&gt;You can use your browser and navigate to http://localhost:4000&lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Or you can downlaod and test your application using &lt;a href=&quot;https://www.postman.com/downloads/&quot;&gt;Postman&lt;/a&gt;&lt;/p&gt;
+
+    &lt;p&gt;You should see our message: &lt;strong&gt;Hello, welcome to your chest!&lt;/strong&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;step-7-now-lets-add-routes&quot;&gt;&lt;strong&gt;Step 7&lt;/strong&gt;: Now lets add routes&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Before we do that, lets give a structure to our project:&lt;/p&gt;
+
+    &lt;ul&gt;
+      &lt;li&gt;
+        &lt;p&gt;In the main project dir, let add a new &lt;strong&gt;src&lt;/strong&gt; dir&lt;/p&gt;
+
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mkdir src
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;inside src dir we will add 3 more dirs (controllers, models, routes)&lt;/p&gt;
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;mkdir {controllers,models,routes}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;Add a new file and call it inventoryChestRoutes.js under the routes dir&lt;/li&gt;
+  &lt;li&gt;we can code our different routes
+    &lt;ol&gt;
+      &lt;li&gt;start off by creating a const that will take in app and set paths as follows:
+  ```
+ const routes = (app) =&amp;gt; {}&lt;/li&gt;
+    &lt;/ol&gt;
+
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 2. lets start by defining our first path `/chest` inside the above mentions `{}`.
+     Inside our path definition we will also add two methods (GET and POST) and we will handle both:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;app.route(“/chest”)
+     .get((req, res) =&amp;gt;
+         res.send(“GET request successfull”))
+     .post((req, res) =&amp;gt; 
+         res.send(“POST request successfull”))&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 3. And now a second path that includes an id `/chest/:chestID`
+     and like our previous path we will add two different methods(PUT and DELETE) and handle the incoming request:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;app.route(“/chest/:chestID”)
+     .put((req, res) =&amp;gt; 
+         res.send(“PUT request successfull”))
+     .delete((req, res) =&amp;gt; 
+         res.send(“DELETE request successfull”))&lt;/p&gt;
+    &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; 4. Finally al that is left to do is to export our routes as follows:
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+    &lt;p&gt;export default routes&lt;/p&gt;
+
+    &lt;p&gt;```&lt;/p&gt;
+    &lt;ol&gt;
+      &lt;li&gt;
+        &lt;p&gt;your inventoryChestRoutes.js should be looking like this:&lt;/p&gt;
+
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; const routes = (app) =&amp;gt; {
+ app.route(&quot;/chest&quot;)
+     .get((req, res) =&amp;gt;
+         res.send(&quot;GET request successfull&quot;))
+     .post((req, res) =&amp;gt; 
+         res.send(&quot;POST request successfull&quot;))
+ app.route(&quot;/chest/:chestID&quot;)
+     .put((req, res) =&amp;gt; 
+         res.send(&quot;PUT request successfull&quot;))
+     .delete((req, res) =&amp;gt; 
+         res.send(&quot;DELETE request successfull&quot;))
+ } 
+
+ export default routes
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Now open postman and test all the new paths we just added!&lt;/p&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;step-7-now-its-time-to-store-something-in-our-chest&quot;&gt;&lt;strong&gt;Step 7&lt;/strong&gt;: Now its time to store something in our chest&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;We will start off by defining what is an &lt;strong&gt;item&lt;/strong&gt; we can put in our chest. Since we are using Mongo as our database, we will need to set up our &lt;strong&gt;mongo&lt;/strong&gt; connection:&lt;/p&gt;
+
+    &lt;ol&gt;
+      &lt;li&gt;Make sure that your local mongodb is up and running&lt;/li&gt;
+      &lt;li&gt;Navigate to the main project directory and open the index.js file&lt;/li&gt;
+      &lt;li&gt;Start by importing mongoose and body-parser (what is used to parse the data incoming from mongo to our API)
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; import mongoose from &apos;mongoose&apos;
+ import bodyParser from &apos;body-parser&apos;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Set up your connection to your local mongo
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; mongoose.Promise = global.Promise 
+ mongoose.connect(&apos;mongodb://localhost/Chestdb&apos;,{
+     useNewUrlParser: true,
+     useUnifiedTopology: true
+ });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;Set up the bodyParser
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; // bodyparser setup
+ app.use(bodyParser.urlencoded({ extended: true }));
+ app.use(bodyParser.json())
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;
+        &lt;p&gt;Now under the /src/controllers folder create na new file and call it inventoryModel.js, add add the followinf code that defines the schema of what will be storing&lt;/p&gt;
+
+        &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt; import mongoose from &quot;mongoose&quot;;
+
+ const Schema = mongoose.Schema
+
+ export const ChestInventorySchema = new Schema ({
+     name: String,
+     created_date: { type: Date, default: Date.now }
+ });
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+    &lt;/ol&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;</content><author><name>Mahmoud Abdel Basset</name></author><category term="software-development" /><category term="nodejs" /><category term="APIs" /><category term="rest" /><category term="express" /><summary type="html">To get started you must have some backgroud knowledge in javascript</summary></entry></feed>
