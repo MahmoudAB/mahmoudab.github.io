@@ -10,7 +10,7 @@
     <meta charset="utf-8">
 
 <!-- begin _includes/seo.html --><title>Building RESTful APIs with Node.js and Express - Mahmoud’s Blog</title>
-<meta name="description" content="To get started you must have some backgroud knowledge in javascript">
+<meta name="description" content="To get started you must have some javascript knowledge">
 
 
   <meta name="author" content="Mahmoud Abdel Basset">
@@ -26,7 +26,7 @@
 <meta property="og:url" content="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">
 
 
-  <meta property="og:description" content="To get started you must have some backgroud knowledge in javascript">
+  <meta property="og:description" content="To get started you must have some javascript knowledge">
 
 
 
@@ -266,7 +266,7 @@
 
   <article class="page" itemscope itemtype="https://schema.org/CreativeWork">
     <meta itemprop="headline" content="Building RESTful APIs with Node.js and Express">
-    <meta itemprop="description" content="To get started you must have some backgroud knowledge in javascript">
+    <meta itemprop="description" content="To get started you must have some javascript knowledge">
     <meta itemprop="datePublished" content="2022-04-20T00:00:00-04:00">
     
 
@@ -289,7 +289,7 @@
       <span class="page__meta-readtime">
         <i class="far fa-clock" aria-hidden="true"></i>
         
-          3 minute read
+          6 minute read
         
       </span>
     
@@ -301,21 +301,21 @@
 
       <section class="page__content" itemprop="text">
         
-        <h4 id="to-get-started-you-must-have-some-backgroud-knowledge-in-javascript">To get started you must have some backgroud knowledge in javascript</h4>
+        <h4 id="to-get-started-you-must-have-some-javascript-knowledge">To get started you must have some javascript knowledge</h4>
 
 <h2 id="step-1-install-nodejs"><strong>Step 1</strong>: <a href="https://nodejs.org/en/download/">Install nodejs</a></h2>
 
-<h2 id="step-2-we-will-be-using-mongo-make-sure-you-have-that-installed"><strong>Step 2</strong>: <a href="https://www.mongodb.com/docs/manual/installation/">We will be using mongo, make sure you have that installed</a></h2>
+<h2 id="step-2-install-mongo"><strong>Step 2</strong>: <a href="https://www.mongodb.com/docs/manual/installation/">Install mongo</a></h2>
 
 <h2 id="step-3-lets-get-started-with-setting-up-your-node-project"><strong>Step 3</strong>: Lets get started with setting up your node project</h2>
 
 <ol>
-  <li>Open a terminal and navigate to a dir of your choice</li>
-  <li>Create a new dir for the project
+  <li>Open a terminal and navigate to a directory of your choice</li>
+  <li>Create a new directory for the project
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir inventory-chest
 </code></pre></div>    </div>
   </li>
-  <li>Run the follwing command
+  <li>Run the following command
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm init
 </code></pre></div>    </div>
     <ul>
@@ -337,7 +337,7 @@
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i express body-parser express mongo mongoose nodemon
 </code></pre></div>    </div>
   </li>
-  <li>Now we will add specific dependencies only for dev puposes, is is doone by adding  <strong>–save-dev</strong>
+  <li>Now we will add specific dependencies for dev
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm i --save-dev babel-cli -babel-preset-env babel-preset-stage0
 </code></pre></div>    </div>
   </li>
@@ -378,7 +378,7 @@
  const PORT = 4000;
 </code></pre></div>    </div>
   </li>
-  <li>lets add a get enpoind
+  <li>lets add a get endpoint
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.get('/', (req, res) =&gt;
      res.send('Hello, welcome to your chest!')
  );
@@ -389,7 +389,7 @@
      console.log(`Your server is sunning on port ${PORT}`)
  );
 </code></pre></div>    </div>
-    <h2 id="step-6-lets-test-run-our-application"><strong>Step 6</strong>: Lets test run our application!</h2>
+    <h2 id="step-6-lets-test-run-our-application"><strong>Step 6</strong>: Let’s test run our application!</h2>
   </li>
   <li>To run the project, navigate to the main project dir and run the following command:
     <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> npm start
@@ -397,7 +397,7 @@
   </li>
   <li>You can use your browser and navigate to http://localhost:4000</li>
   <li>
-    <p>Or you can downlaod and test your application using <a href="https://www.postman.com/downloads/">Postman</a></p>
+    <p>Or you can download and test your application using <a href="https://www.postman.com/downloads/">Postman</a></p>
 
     <p>You should see our message: <strong>Hello, welcome to your chest!</strong></p>
   </li>
@@ -405,19 +405,23 @@
 
 <h2 id="step-7-now-lets-add-routes"><strong>Step 7</strong>: Now lets add routes</h2>
 
+<p>Before moving forward, you might be asking yourself, what are routes?</p>
+
+<p>And that is a great  question, in the context of express http requests, it refers to how the endpoints in your application respond to the client requests.</p>
+
 <ol>
   <li>
     <p>Before we do that, lets give a structure to our project:</p>
 
     <ul>
       <li>
-        <p>In the main project dir, let add a new <strong>src</strong> dir</p>
+        <p>In the main project folder, let add a new <strong>src</strong> folder</p>
 
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir src
 </code></pre></div>        </div>
       </li>
       <li>
-        <p>inside src dir we will add 3 more dirs (controllers, models, routes)</p>
+        <p>inside src folder we will add 3 more folders (controllers, models, routes)</p>
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir {controllers,models,routes}
 </code></pre></div>        </div>
       </li>
@@ -426,61 +430,69 @@
   <li>Add a new file and call it inventoryChestRoutes.js under the routes dir</li>
   <li>we can code our different routes
     <ol>
-      <li>start off by creating a const that will take in app and set paths as follows:
-  ```
- const routes = (app) =&gt; {}</li>
-    </ol>
+      <li>
+        <p>start off by creating a const that will take in app and set paths as follows:</p>
 
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 2. lets start by defining our first path `/chest` inside the above mentions `{}`.
-     Inside our path definition we will also add two methods (GET and POST) and we will handle both:
-</code></pre></div>    </div>
-    <p>app.route(“/chest”)
-     .get((req, res) =&gt;
-         res.send(“GET request successfull”))
-     .post((req, res) =&gt; 
-         res.send(“POST request successfull”))</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 3. And now a second path that includes an id `/chest/:chestID`
-     and like our previous path we will add two different methods(PUT and DELETE) and handle the incoming request:
-</code></pre></div>    </div>
-    <p>app.route(“/chest/:chestID”)
-     .put((req, res) =&gt; 
-         res.send(“PUT request successfull”))
-     .delete((req, res) =&gt; 
-         res.send(“DELETE request successfull”))</p>
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> 4. Finally al that is left to do is to export our routes as follows:
-</code></pre></div>    </div>
-    <p>export default routes</p>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     const routes = (app) =&gt; {}
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>lets start by defining our first path <code class="language-plaintext highlighter-rouge">/chest</code> inside the above mentions <code class="language-plaintext highlighter-rouge">{}</code>.
+ Inside our path definition we will also add one GET method and handle it:</p>
 
-    <p>```</p>
-    <ol>
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.route("/chest")
+ .get((req, res) =&gt;
+     res.send("GET request successfull"))
+</code></pre></div>        </div>
+      </li>
+      <li>now lets add a second path for POST
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.route("/item")
+ .post((req, res) =&gt;
+     res.send("POST request successfull"))
+</code></pre></div>        </div>
+      </li>
+      <li>finally a third path that includes an id <code class="language-plaintext highlighter-rouge">/item/:itemId</code>
+ and  we will add two different methods(PUT and DELETE) and handle the incoming request:
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  app.route("/item/:itemId")
+ .put((req, res) =&gt; 
+     res.send("PUT request successfull"))
+ .delete((req, res) =&gt; 
+     res.send("DELETE request successfull"))
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>Finally all that is left to do is to export our routes as follows:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export default routes
+</code></pre></div>        </div>
+      </li>
       <li>
         <p>your inventoryChestRoutes.js should be looking like this:</p>
 
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> const routes = (app) =&gt; {
- app.route("/chest")
-     .get((req, res) =&gt;
-         res.send("GET request successfull"))
-     .post((req, res) =&gt; 
-         res.send("POST request successfull"))
- app.route("/chest/:chestID")
-     .put((req, res) =&gt; 
-         res.send("PUT request successfull"))
+     app.route("/chest")
+         .get((req, res) =&gt;
+             res.send("GET request successfull"))
+     app.route("/item")
+         .post((req, res) =&gt;
+             res.send("POST request successfull"))
+     app.route("/item/:itemId")
+         .put((req, res) =&gt; 
+             res.send("PUT request successfull"))
      .delete((req, res) =&gt; 
-         res.send("DELETE request successfull"))
- } 
+             res.send("DELETE request successfull"))
+} 
 
  export default routes
 
 </code></pre></div>        </div>
       </li>
-      <li>
-        <p>Now open postman and test all the new paths we just added!</p>
-      </li>
+      <li>Now open postman and test all the new paths we just added!</li>
     </ol>
   </li>
 </ol>
 
-<h2 id="step-7-now-its-time-to-store-something-in-our-chest"><strong>Step 7</strong>: Now its time to store something in our chest</h2>
+<h2 id="step-8-now-its-time-to-store-something-in-our-chest"><strong>Step 8</strong>: Now its time to store something in our chest</h2>
 
 <ol>
   <li>
@@ -509,8 +521,12 @@
  app.use(bodyParser.json())
 </code></pre></div>        </div>
       </li>
+      <li>Make sure express accepts json objects
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.use(express.json());
+</code></pre></div>        </div>
+      </li>
       <li>
-        <p>Now under the /src/controllers folder create na new file and call it inventoryModel.js, add add the followinf code that defines the schema of what will be storing</p>
+        <p>Now under the /src/models folder create a new file and call it InventoryModel.js, and add the following code that defines the schema of what will be storing</p>
 
         <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import mongoose from "mongoose";
 
@@ -522,9 +538,216 @@
  });
 </code></pre></div>        </div>
       </li>
+      <li>
+        <p>Now under the /src/controllers folder create a new file and call it InventoryController.js, and add the following code instantiates an item object</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import mongoose from "mongoose";
+ import { ItemSchema } from "../models/inventoryChestModel";
+
+ const Item = mongoose.model('chest', ItemSchema)
+</code></pre></div>        </div>
+      </li>
     </ol>
   </li>
+  <li>Now lets add some code to save an item in our chest.
+    <ol>
+      <li>
+        <p>Under the /src/controllers/InventoryChestController.js add the following block of code:</p>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export const addNewItem = (req,res) =&gt; {
+ let newItem = new Item(req.body)
+
+ newItem.save((err, contact) =&gt; {
+     if(err){
+         res.send(err)
+     }
+     res.json(contact);
+
+     })
+ }
+</code></pre></div>        </div>
+      </li>
+      <li>
+        <p>All we need now is to wire our routes to the new code we just added, on the InventoryChestRoutes.js file add the following code:</p>
+
+        <ul>
+          <li>At the beginning of the file:</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import { addNewItem } from "../controllers/InventoryChestController"
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Now change your post route</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.route("/item")
+     .post(addNewItem)
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Your InventoryChestRoutes.js should be looking like this now:</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import { addNewItem } from "../controllers/InventoryChestController"
+
+ const routes = (app) =&gt; {
+     app.route("/chest")
+         .get((req, res) =&gt;
+             res.send("GET request successfull"))
+     app.route("/item")
+         .post(addNewItem)
+     app.route("/item/:itemId")
+         .put((req, res) =&gt; 
+             res.send("PUT request successfull"))
+         .delete((req, res) =&gt; 
+             res.send("DELETE request successfull"))
+ } 
+
+ export default routes
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Now lets display our chest.</p>
+
+    <ol>
+      <li>Same process as saving an item, open /src/controllers/InventoryChestController.js and add the following block of code:</li>
+    </ol>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> export const getChest = (req, res) =&gt; {
+ Item.find({}, (err, item) =&gt; {
+     if(err){
+         res.send(err)
+     }
+     res.json(item)
+  })
+ }
+</code></pre></div>    </div>
+    <p>This code snipped queries our mongo database with the <code class="language-plaintext highlighter-rouge">Item.find</code>, the first argument <code class="language-plaintext highlighter-rouge">{}</code> represents everything in the database collection. So we are asking mondo to return every item stored</p>
+
+    <ol>
+      <li>
+        <p>Now same as for adding an item, lets modify our InventoryChestRoutes to point to our controller code:</p>
+
+        <ul>
+          <li>At the beginning of the file add <code class="language-plaintext highlighter-rouge">getChest</code> to the imports:</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> import { addNewItem, getChest } from "../controllers/InventoryChestController"
+</code></pre></div>        </div>
+
+        <ul>
+          <li>Now change your get route</li>
+        </ul>
+
+        <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code> app.route("/item")
+     .post(getChest)
+</code></pre></div>        </div>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>As you may have noticed the process is to add your Controller and then make sure your route connects to that controller. A rinse and repeat process, this is how your code should look like with UPDATE, DELETE, and GET by Id:</p>
+
+    <ul>
+      <li>InventoryChestController.js</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     import mongoose from "mongoose";
+     import { ItemSchema } from "../models/InventoryChestModel";
+
+     const Item = mongoose.model('chest', ItemSchema)
+
+     export const addNewItem = (req,res) =&gt; {
+         let newItem = new Item(req.body)
+
+         newItem.save((err, contact) =&gt; {
+             if(err){
+                 res.send(err)
+             }
+             res.json(contact);
+
+         })
+     }
+
+     export const getChest = (req, res) =&gt; {
+         Item.find({}, (err, item) =&gt; {
+             if(err){
+                 res.send(err)
+             }
+             res.json(item)
+
+         })
+     }
+
+     export const getItemWithId = (req, res) =&gt; {
+         Item.findById(req.params.itemId, (err, item) =&gt; {
+             if(err){
+                 res.send(err)
+             }
+             res.json(item)
+
+         })
+     }
+
+     export const updateItem = (req, res) =&gt; {
+         Item.findOneAndUpdate({_id: req.params.itemId}, req.body,{new: true, useFindAndModify: false }, 
+             (err, item) =&gt; {
+                 if(err){
+                     res.send(err)
+                 }
+                 res.json(item)
+
+         })
+     }
+
+     export const deleteItem = (req, res) =&gt; {
+         Item.remove({_id: req.params.itemId}, (err, item) =&gt; {
+             if(err){
+                 res.send(err)
+             }
+             res.json({message: 'successfully deleted item'})
+
+         })
+     }    
+
+</code></pre></div>    </div>
+
+    <ul>
+      <li>InventoryChestRoutes.js</li>
+    </ul>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     import { addNewItem, 
+             getChest,
+             getItemWithId,
+             updateItem,
+             deleteItem
+     } from "../controllers/InventoryChestController"
+
+     const routes = (app) =&gt; {
+         app.route("/chest")
+             .get(getChest)
+         app.route("/item")
+             .post(addNewItem)
+         app.route("/item/:itemId")
+             .get(getItemWithId)
+             .put(updateItem)
+             .delete(deleteItem)
+     } 
+
+     export default routes
+    
+</code></pre></div>    </div>
+  </li>
 </ol>
+
+<p>With these final changes, our api is complete. We are able to add a new item in our chest, update the quantity of that item, view an item by its ID, we can also view all items in our chest, we can also delete an item we don’t want anymore. Now go ahead and test the application using Postman, feel free to change the code and add your own twist to it, hope you enjoyed and had fun, and most importantly learned something new.</p>
+
+<ul>
+  <li>Mahmoud Abdel Basset</li>
+</ul>
 
         
       </section>
@@ -659,11 +882,11 @@
         
       
         
-          <li><a href="https://www.youtube.com/channel/UCHsL5dE4-Pvhs3BQWmFD6nA" rel="nofollow noopener noreferrer"><i class="fab fa fa-youtube-play" aria-hidden="true"></i> Youtube</a></li>
+          <li><a href="https://www.youtube.com/channel/UCHsL5dE4-Pvhs3BQWmFD6nA" rel="nofollow noopener noreferrer"><i class="fab fa-brands fa-youtube" aria-hidden="true"></i> Youtube</a></li>
         
       
         
-          <li><a href="https://www.linkedin.com/in/mahmoud-abdel-basset-6a492588/" rel="nofollow noopener noreferrer"><i class="fab fa fa-linkedin-square" aria-hidden="true"></i> Linkedin</a></li>
+          <li><a href="https://www.linkedin.com/in/mahmoud-abdel-basset-6a492588/" rel="nofollow noopener noreferrer"><i class="fab fa-brands fa-linkedin" aria-hidden="true"></i> Linkedin</a></li>
         
       
     
