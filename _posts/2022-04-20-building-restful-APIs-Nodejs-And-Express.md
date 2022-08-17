@@ -9,6 +9,11 @@ tags:
   - express
 ---
 
+In this article we go over the basics of how to develop an api using nodejs and express, utilizing mongo as our database to persist data. 
+
+The main idea behind this api is to manage an inventory chest. The api provides endpoints to add, view, update, and delete items in a chest. You can find the source code here: [Inventory-Chest](https://github.com/MahmoudAB/inventory-chest) 
+
+
 #### To get started you must have some javascript knowledge
 
 ## **Step 1**: [Install nodejs](https://nodejs.org/en/download/)
