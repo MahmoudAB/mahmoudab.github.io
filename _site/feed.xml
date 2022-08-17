@@ -1,10 +1,33 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-08-17T06:47:44-04:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Mahmoud’s Blog</title><subtitle>Welcome to my blog where I will be writing articles on things I like.
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-08-17T07:05:08-04:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Mahmoud’s Blog</title><subtitle>Welcome to my blog where I will be writing articles on things I like.
  - Which include:
     - Software developement 
     - technology
     - videography 
     - photography
-    - self development </subtitle><author><name>Mahmoud Abdel Basset</name></author><entry><title type="html">Hello World</title><link href="http://localhost:4000/blog/hello/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2022-08-12T00:00:00-04:00</published><updated>2022-08-12T00:00:00-04:00</updated><id>http://localhost:4000/blog/hello/hello-world</id><content type="html" xml:base="http://localhost:4000/blog/hello/hello-world/">&lt;p&gt;Hello World&lt;/p&gt;</content><author><name>Mahmoud Abdel Basset</name></author><category term="hello" /><category term="hello" /><category term="world" /><summary type="html">Hello World</summary></entry><entry><title type="html">Building RESTful APIs with Node.js and Express</title><link href="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/" rel="alternate" type="text/html" title="Building RESTful APIs with Node.js and Express" /><published>2022-04-20T00:00:00-04:00</published><updated>2022-04-20T00:00:00-04:00</updated><id>http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express</id><content type="html" xml:base="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">&lt;p&gt;In this article we go over the basics of how to develop an api using nodejs and express, utilizing mongo as our database to persist data.&lt;/p&gt;
+    - self development </subtitle><author><name>Mahmoud Abdel Basset</name></author><entry><title type="html">Hello World</title><link href="http://localhost:4000/blog/hello/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2022-08-12T00:00:00-04:00</published><updated>2022-08-12T00:00:00-04:00</updated><id>http://localhost:4000/blog/hello/hello-world</id><content type="html" xml:base="http://localhost:4000/blog/hello/hello-world/">&lt;p&gt;Hello World! Welcome to my blog! In this blog I will document the things a learn in my software development journey.&lt;/p&gt;
+
+&lt;p&gt;Thanks for taking the time to explore and read this article. I would like to say that I am big proponent of learning, and I want to congratulate you in seeking knowledge, here’s an interesting and cool quote on learning:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“The more that you read, the more things you will know. The more that you learn, the more places you’ll go.”
+― Dr. Seuss&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I encourage you to apply the concepts you read in this blog, the real experience is in doing and not reading. Another cool quote:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“Tell me and I forget, teach me and I may remember, involve me and I learn.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;– Benjamin Franklin&lt;/p&gt;
+
+&lt;p&gt;I hope you get a thing or two from this blog, feel free to reach out to me on my socials for any feedback, and don’t forget to keep on learning!&lt;/p&gt;
+
+&lt;p&gt;until next time!&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Mahmoud Abdel Basset&lt;/li&gt;
+&lt;/ul&gt;</content><author><name>Mahmoud Abdel Basset</name></author><category term="hello" /><category term="hello" /><category term="world" /><summary type="html">Hello World! Welcome to my blog! In this blog I will document the things a learn in my software development journey.</summary></entry><entry><title type="html">Building RESTful APIs with Node.js and Express</title><link href="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/" rel="alternate" type="text/html" title="Building RESTful APIs with Node.js and Express" /><published>2022-04-20T00:00:00-04:00</published><updated>2022-04-20T00:00:00-04:00</updated><id>http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express</id><content type="html" xml:base="http://localhost:4000/blog/software-development/building-restful-APIs-Nodejs-And-Express/">&lt;p&gt;In this article we go over the basics of how to develop an api using nodejs and express, utilizing mongo as our database to persist data.&lt;/p&gt;
 
 &lt;p&gt;The main idea behind this api is to manage an inventory chest. The api provides endpoints to add, view, update, and delete items in a chest. You can find the source code here: &lt;a href=&quot;https://github.com/MahmoudAB/inventory-chest&quot;&gt;Inventory-Chest&lt;/a&gt;&lt;/p&gt;
 
