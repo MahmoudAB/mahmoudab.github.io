@@ -7,7 +7,7 @@ tags:
   - world
 ---
 
-Hello World! Welcome to my blog! In this blog I will document the things a learn in my software development journey.
+Hello World! Welcome to my blog! In this blog I will document the things I learn in my software development journey.
 
 Thanks for taking the time to explore and read this article. I would like to say that I am big proponent of learning, and I want to congratulate you in seeking knowledge, here's an interesting and cool quote on learning:
 

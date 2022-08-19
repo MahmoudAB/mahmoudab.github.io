@@ -24,14 +24,6 @@ title                    : "Mahmoud's Blog"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
 name                     : "Mahmoud Abdel Basset"
-description: >- # this means to ignore newlines until "baseurl:"
-    Welcome to my blog where I will be writing articles on things I like.
-     - Which include:
-        - Software developement 
-        - technology
-        - videography 
-        - photography
-        - self development 
 url: "MahmoudAB/mahmoudab.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 repository: "MahmoudAB/mahmoudab.github.io"
 baseurl: "/blog" # the subpath of your site, e.g. /blog
@@ -47,7 +39,7 @@ search_full_content      : true
 author:
   name             : "Mahmoud Abdel Basset"
   avatar           : "./assets/images/me.png"
-  bio              : "Welcome to my blog where I will be writing articles on various topics such as software developement, technology, videography, photography, and self development."
+  bio              : " Welcome to my blog! In this blog I document the things I learn in my software development journey."
   location: "Montreal, Canada"
   links:
     - label: "Email"
