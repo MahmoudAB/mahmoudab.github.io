@@ -10,4 +10,10 @@ var store = [{
         "tags": ["hello","world"],
         "url": "/blog/hello/hello-world/",
         "teaser": null
+      },{
+        "title": "Yarn",
+        "excerpt":"Simply…   What is Yarn?   Yarn is a package manager for nodejs.   Why Yarn?   Yarn is very fast and secure, it saves a lot of time for developers to focus on the fun stuff, which is coding.   Yarn vs npm?   Yarn is faster, more secure, and reliable.   How to use yarn?      make sure you have node installed   Install yarn using npm:   npm install --global yarn   Go to project directory and run:   yarn init   Answer the prompts accordingly   Add dependency   yarn add express   Voila you are all setup! you can now use the packages you want in your project.   extra:   If you want to use yarn to start up your node application got to package.json and add the following json element:     \"scripts\": {     \"start\": \"node .\",     \"start:debug\": \"node --inspect .\"   }   save your file and go to the main directory path and run:   yarn start   Your application should now be up and running!   Until next time!   Mahmoud Abdel Basset  ","categories": ["javascript","nodejs","yarn","package-management"],
+        "tags": ["yarn","javascript"],
+        "url": "/blog/javascript/nodejs/yarn/package-management/yarn/",
+        "teaser": null
       }]

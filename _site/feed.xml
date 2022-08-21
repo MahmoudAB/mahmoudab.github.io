@@ -1,4 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-08-19T06:51:16-04:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Mahmoud’s Blog</title><author><name>Mahmoud Abdel Basset</name></author><entry><title type="html">Hello World</title><link href="http://localhost:4000/blog/hello/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2022-08-12T00:00:00-04:00</published><updated>2022-08-12T00:00:00-04:00</updated><id>http://localhost:4000/blog/hello/hello-world</id><content type="html" xml:base="http://localhost:4000/blog/hello/hello-world/">&lt;p&gt;Hello World! Welcome to my blog! In this blog I will document the things I learn in my software development journey.&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.9.2">Jekyll</generator><link href="http://localhost:4000/blog/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/blog/" rel="alternate" type="text/html" /><updated>2022-08-21T06:11:11-04:00</updated><id>http://localhost:4000/blog/feed.xml</id><title type="html">Mahmoud’s Blog</title><author><name>Mahmoud Abdel Basset</name></author><entry><title type="html">Yarn</title><link href="http://localhost:4000/blog/javascript/nodejs/yarn/package-management/yarn/" rel="alternate" type="text/html" title="Yarn" /><published>2022-08-18T00:00:00-04:00</published><updated>2022-08-18T00:00:00-04:00</updated><id>http://localhost:4000/blog/javascript/nodejs/yarn/package-management/yarn</id><content type="html" xml:base="http://localhost:4000/blog/javascript/nodejs/yarn/package-management/yarn/">&lt;p&gt;Simply…&lt;/p&gt;
+
+&lt;h3 id=&quot;what-is-yarn&quot;&gt;What is Yarn?&lt;/h3&gt;
+
+&lt;p&gt;Yarn is a package manager for nodejs.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-yarn&quot;&gt;Why Yarn?&lt;/h3&gt;
+
+&lt;p&gt;Yarn is very fast and secure, it saves a lot of time for developers to focus on the fun stuff, which is coding.&lt;/p&gt;
+
+&lt;h3 id=&quot;yarn-vs-npm&quot;&gt;Yarn vs npm?&lt;/h3&gt;
+
+&lt;p&gt;Yarn is faster, more secure, and reliable.&lt;/p&gt;
+
+&lt;h3 id=&quot;how-to-use-yarn&quot;&gt;How to use yarn?&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;make sure you have &lt;a href=&quot;https://nodejs.org/en/download/&quot;&gt;node&lt;/a&gt; installed&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Install yarn using npm:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;npm install --global yarn
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Go to project directory and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn init
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Answer the prompts accordingly&lt;/p&gt;
+
+&lt;p&gt;Add dependency&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn add express
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Voila you are all setup! you can now use the packages you want in your project.&lt;/p&gt;
+
+&lt;h4 id=&quot;extra&quot;&gt;extra:&lt;/h4&gt;
+
+&lt;p&gt;If you want to use yarn to start up your node application got to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;package.json&lt;/code&gt; and add the following json element:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;  &quot;scripts&quot;: {
+    &quot;start&quot;: &quot;node .&quot;,
+    &quot;start:debug&quot;: &quot;node --inspect .&quot;
+  }
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;save your file and go to the main directory path and run:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;yarn start
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Your application should now be up and running!&lt;/p&gt;
+
+&lt;p&gt;Until next time!&lt;/p&gt;
+
+&lt;p&gt;Mahmoud Abdel Basset&lt;/p&gt;</content><author><name>Mahmoud Abdel Basset</name></author><category term="javascript" /><category term="nodejs" /><category term="yarn" /><category term="package-management" /><category term="yarn" /><category term="javascript" /><summary type="html">Simply…</summary></entry><entry><title type="html">Hello World</title><link href="http://localhost:4000/blog/hello/hello-world/" rel="alternate" type="text/html" title="Hello World" /><published>2022-08-12T00:00:00-04:00</published><updated>2022-08-12T00:00:00-04:00</updated><id>http://localhost:4000/blog/hello/hello-world</id><content type="html" xml:base="http://localhost:4000/blog/hello/hello-world/">&lt;p&gt;Hello World! Welcome to my blog! In this blog I will document the things I learn in my software development journey.&lt;/p&gt;
 
 &lt;p&gt;Thanks for taking the time to explore and read this article. I would like to say that I am big proponent of learning, and I want to congratulate you in seeking knowledge, here’s an interesting and cool quote on learning:&lt;/p&gt;
 
