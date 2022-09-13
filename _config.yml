@@ -79,7 +79,7 @@ footer:
       url: "https://www.linkedin.com/in/mahmoud-abdel-basset-6a492588/" 
 
 # Build settings
-theme: "minimal-mistakes-jekyll"
+remote_theme: "mmistakes/minimal-mistakes@4.24.0"
 minimal_mistakes_skin: "default"
 plugins:
   - jekyll-paginate
